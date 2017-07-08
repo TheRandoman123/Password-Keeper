@@ -55,17 +55,23 @@ namespace Password_Keeper
 
             string fileRead = File.ReadAllText(@"C:\Users\nerfs\Desktop\C# test folder\test.txt");
 
+
+
             if (Sign_In_TextBox_Username.Text + Sign_In_TextBox_Password.Text == fileRead)
             {
                 Sign_In_TextBox_Username.Clear();
 
                 Sign_In_TextBox_Password.Clear();
 
-                MessageBox.Show("Sign in complete");
+                var PC = new Password_Center();
+                PC.Show();
             }
-                else
+
+
+
+            else
                 {
-                MessageBox.Show("Sign in failure");
+                MessageBox.Show("Wrong password or username, try again.");
                 }
             }
 
