@@ -45,7 +45,7 @@ namespace Password_Keeper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string
+            
 
             string Sign_In_Username_Input = Sign_Up_TextBox_Username.Text;
 
@@ -53,9 +53,9 @@ namespace Password_Keeper
 
             string textBoxOutput= Sign_In_Password_Input;
 
-            File.ReadAllText();
+            string fileRead = File.ReadAllText(@"C:\Users\nerfs\Desktop\C# test folder\test.txt");
 
-            if ()
+            if (fileRead == Sign_Up_TextBox_Username.Text + Sign_Up_TextBox_Password.Text)
             {
                 Sign_In_TextBox_Username.Clear();
 
@@ -68,6 +68,9 @@ namespace Password_Keeper
                 MessageBox.Show("Sign in failure");
                 }
             }
-        }
+
+      
+    }
     }
 
+                
