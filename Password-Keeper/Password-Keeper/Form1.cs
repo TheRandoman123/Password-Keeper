@@ -48,14 +48,14 @@ namespace Password_Keeper
             
 
             string Sign_In_Username_Input = Sign_Up_TextBox_Username.Text;
-
+            
             string Sign_In_Password_Input = Sign_Up_TextBox_Password.Text;
 
             string textBoxOutput= Sign_In_Password_Input;
 
             string fileRead = File.ReadAllText(@"C:\Users\nerfs\Desktop\C# test folder\test.txt");
 
-            if (fileRead == Sign_Up_TextBox_Username.Text + Sign_Up_TextBox_Password.Text)
+            if (Sign_In_TextBox_Username.Text + Sign_In_TextBox_Password.Text == fileRead)
             {
                 Sign_In_TextBox_Username.Clear();
 

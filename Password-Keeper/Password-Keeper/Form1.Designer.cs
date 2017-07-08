@@ -189,6 +189,7 @@
             this.Controls.Add(this.Sign_In_Password_Label);
             this.Controls.Add(this.Sign_In_Username_Label);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Password-Keeper";
             this.ResumeLayout(false);
             this.PerformLayout();
