@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Sign_In_Username_Label = new System.Windows.Forms.Label();
             this.Sign_In_Password_Label = new System.Windows.Forms.Label();
             this.Sign_In_TextBox_Password = new System.Windows.Forms.TextBox();
@@ -188,6 +189,7 @@
             this.Controls.Add(this.Sign_In_TextBox_Password);
             this.Controls.Add(this.Sign_In_Password_Label);
             this.Controls.Add(this.Sign_In_Username_Label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Password-Keeper";

@@ -22,9 +22,9 @@ namespace Password_Keeper
         {
 
             
-            string Sign_In_Username_Input = Sign_Up_TextBox_Username.Text;
+            string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
 
-            string Sign_In_Password_Input =  Sign_Up_TextBox_Password.Text;
+            string Sign_In_Password_Input =  AesCryp.Encrypt(Sign_Up_TextBox_Password.Text);
 
 
             var fileCreate = File.Create(@"C:\Users\nerfs\Desktop\C# test folder\test.txt");
@@ -47,9 +47,9 @@ namespace Password_Keeper
         {
             
 
-            string Sign_In_Username_Input = Sign_Up_TextBox_Username.Text;
+            string Sign_In_Username_Input = AesCryp.Encrypt(Sign_In_TextBox_Username.Text);
             
-            string Sign_In_Password_Input = Sign_Up_TextBox_Password.Text;
+            string Sign_In_Password_Input = AesCryp.Encrypt(Sign_In_TextBox_Password.Text);
 
             string textBoxOutput= Sign_In_Password_Input;
 
@@ -57,7 +57,7 @@ namespace Password_Keeper
 
 
 
-            if (Sign_In_TextBox_Username.Text + Sign_In_TextBox_Password.Text == fileRead)
+            if (Sign_In_Password_Input + Sign_In_Username_Input == fileRead)
             {
                 Sign_In_TextBox_Username.Clear();
 
@@ -65,6 +65,8 @@ namespace Password_Keeper
 
                 var PC = new Password_Center();
                 PC.Show();
+
+                
             }
 
 
