@@ -4,6 +4,7 @@ using System.IO;
 using Encript_And_Decript;
 
 
+
 namespace Password_Keeper
 {
     public partial class Form1 : Form
@@ -20,20 +21,20 @@ namespace Password_Keeper
 
         private void button2_Click(object sender, EventArgs e)
         {
+			string filePath = @"C:\Users\Roy\Documents\C# Folder\File.txt";
 
-            
-            string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
+			string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
 
             string Sign_In_Password_Input =  AesCryp.Encrypt(Sign_Up_TextBox_Password.Text);
 
-
-            var fileCreate = File.Create(@"C:\Users\nerfs\Desktop\C# test folder\test.txt");
+			
+            var fileCreate = File.Create(filePath);
             fileCreate.Close();
             
             
-            File.AppendAllText(@"C:\Users\nerfs\Desktop\C# test folder\test.txt", Sign_In_Username_Input);
+            File.AppendAllText(filePath, Sign_In_Username_Input);
             
-            File.AppendAllText(@"C:\Users\nerfs\Desktop\C# test folder\test.txt", Sign_In_Password_Input);
+            File.AppendAllText(filePath, Sign_In_Password_Input);
 
             Sign_Up_TextBox_Username.Clear();
 
@@ -46,6 +47,8 @@ namespace Password_Keeper
         private void button1_Click(object sender, EventArgs e)
         {
             
+	        string filePath = @"C:\Users\Roy\Documents\C# Folder\File.txt";
+
 
             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_In_TextBox_Username.Text);
             
@@ -53,7 +56,7 @@ namespace Password_Keeper
 
             string textBoxOutput= Sign_In_Password_Input;
 
-            string fileRead = File.ReadAllText(@"C:\Users\nerfs\Desktop\C# test folder\test.txt");
+            string fileRead = File.ReadAllText(filePath);
 
 
 
