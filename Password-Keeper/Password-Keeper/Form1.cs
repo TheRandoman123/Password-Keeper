@@ -69,8 +69,8 @@ namespace Password_Keeper
                 var PC = new Password_Center();
                 PC.Show();
 
-                
-            }
+
+			}
 
 
 
