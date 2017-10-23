@@ -21,14 +21,15 @@ namespace Password_Keeper
 
         private void button2_Click(object sender, EventArgs e)
         {
-			string filePath = @"C:\Users\Roy\Documents\C# Folder\File.txt";
 
-			string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
+            var filePath = filePathBox.Text();//Becasue of this
+
+            string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
 
             string Sign_In_Password_Input =  AesCryp.Encrypt(Sign_Up_TextBox_Password.Text);
 
 			
-            var fileCreate = File.Create(filePath);
+            var fileCreate = File.Create(filePath);    //finish fixing this error 
             fileCreate.Close();
             
             
@@ -46,8 +47,8 @@ namespace Password_Keeper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-	        string filePath = @"C:\Users\Roy\Documents\C# Folder\File.txt";
+
+            string filePath = filePathBox.Text();
 
 
             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_In_TextBox_Username.Text);
@@ -80,7 +81,15 @@ namespace Password_Keeper
                 }
             }
 
-      
+        private string filePathBox()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

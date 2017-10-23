@@ -22,17 +22,15 @@ namespace Password_Keeper.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(" Settings.Default.Save();")]
-        public string Settings {
-            get {
-                return ((string)(this["Settings"]));
-            }
-            set {
-                this["Settings"] = value;
-            }
+
+        public string GetSettings()
+        {
+            return ((string)(this["Settings"]));
+        }
+
+        public void SetSettings(string value)
+        {
+            this["Settings"] = value;
         }
     }
 }
