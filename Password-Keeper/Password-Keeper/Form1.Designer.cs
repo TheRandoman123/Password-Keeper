@@ -42,7 +42,7 @@
             this.Sign_Up_TextBox_Password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.filePathBox = new System.Windows.Forms.TextBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // Sign_In_Username_Label
@@ -172,19 +172,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // filePathBox
-            // 
-            this.filePathBox.Location = new System.Drawing.Point(179, 226);
-            this.filePathBox.Name = "filePathBox";
-            this.filePathBox.Size = new System.Drawing.Size(326, 20);
-            this.filePathBox.TabIndex = 13;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 261);
-            this.Controls.Add(this.filePathBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Sign_Up_TextBox_Password);
@@ -223,7 +215,7 @@
         private System.Windows.Forms.TextBox Sign_Up_TextBox_Password;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox filePathBox;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 

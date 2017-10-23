@@ -21,8 +21,12 @@ namespace Password_Keeper
 
         private void button2_Click(object sender, EventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save where the password file goes";
+            saveFileDialog.ShowDialog();
 
-            var filePath = filePathBox.Text();//Becasue of this
+            string filePath = (saveFileDialog.FileName);
+
 
             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
 
@@ -48,7 +52,7 @@ namespace Password_Keeper
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string filePath = filePathBox.Text();
+            string filePath = (saveFileDialog.FileName);
 
 
             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_In_TextBox_Username.Text);
@@ -90,6 +94,13 @@ namespace Password_Keeper
         {
 
         }
+
+        private void file_save_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+       
     }
     }
 
