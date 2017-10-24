@@ -43,6 +43,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.profile_name_textbox_sign_up = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Sign_In_Username_Label
@@ -64,7 +66,7 @@
             this.Sign_In_Password_Label.TabIndex = 1;
             this.Sign_In_Password_Label.Tag = "Sign_In_Password_Label";
             this.Sign_In_Password_Label.Text = "Password";
-            this.Sign_In_Password_Label.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // Sign_In_TextBox_Password
             // 
@@ -116,7 +118,7 @@
             // Sign_Up_Username_Label
             // 
             this.Sign_Up_Username_Label.AutoSize = true;
-            this.Sign_Up_Username_Label.Location = new System.Drawing.Point(428, 81);
+            this.Sign_Up_Username_Label.Location = new System.Drawing.Point(428, 102);
             this.Sign_Up_Username_Label.Name = "Sign_Up_Username_Label";
             this.Sign_Up_Username_Label.Size = new System.Drawing.Size(55, 13);
             this.Sign_Up_Username_Label.TabIndex = 7;
@@ -135,7 +137,7 @@
             // 
             // Sign_Up_TextBox_Username
             // 
-            this.Sign_Up_TextBox_Username.Location = new System.Drawing.Point(487, 78);
+            this.Sign_Up_TextBox_Username.Location = new System.Drawing.Point(487, 102);
             this.Sign_Up_TextBox_Username.Name = "Sign_Up_TextBox_Username";
             this.Sign_Up_TextBox_Username.Size = new System.Drawing.Size(100, 20);
             this.Sign_Up_TextBox_Username.TabIndex = 9;
@@ -172,11 +174,30 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Sign_up_button);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(414, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Profile Name";
+            // 
+            // profile_name_textbox_sign_up
+            // 
+            this.profile_name_textbox_sign_up.Location = new System.Drawing.Point(486, 52);
+            this.profile_name_textbox_sign_up.Name = "profile_name_textbox_sign_up";
+            this.profile_name_textbox_sign_up.Size = new System.Drawing.Size(100, 20);
+            this.profile_name_textbox_sign_up.TabIndex = 14;
+            this.profile_name_textbox_sign_up.Tag = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 261);
+            this.Controls.Add(this.profile_name_textbox_sign_up);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Sign_Up_TextBox_Password);
@@ -194,7 +215,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Password-Keeper";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +236,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox profile_name_textbox_sign_up;
     }
 }
 
