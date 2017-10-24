@@ -3,8 +3,6 @@ using System.Windows.Forms;
 using System.IO;
 using Encript_And_Decript;
 
-
-
 namespace Password_Keeper
 {
     public partial class Form1 : Form
@@ -13,30 +11,41 @@ namespace Password_Keeper
         {
             InitializeComponent();
         }
-
+        
         private void label1_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Sign_up_button(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Title = "Save where the password file goes";
-            saveFileDialog.ShowDialog();
-
-            string filePath = (saveFileDialog.FileName);
 
 
+            string userName = Environment.UserName;
+
+
+            string filePath = (@"C:\Users\"+ userName + @"\Desktop\Github\Password Keeper\Profile.txt");
+            
             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
 
             string Sign_In_Password_Input =  AesCryp.Encrypt(Sign_Up_TextBox_Password.Text);
 
-			
-            var fileCreate = File.Create(filePath);    //finish fixing this error 
-            fileCreate.Close();
-            
-            
+            if (File.Exists(filePath) == true)
+            {
+                MessageBox.Show("Complete");
+            }
+            else
+            {
+                File.AppendAllText(filePath, Sign_In_Username_Input);
+
+                File.AppendAllText(filePath, Sign_In_Password_Input);
+
+                Sign_Up_TextBox_Username.Clear();
+
+                Sign_Up_TextBox_Password.Clear();
+
+                MessageBox.Show("Complete");
+            }
             File.AppendAllText(filePath, Sign_In_Username_Input);
             
             File.AppendAllText(filePath, Sign_In_Password_Input);
@@ -49,10 +58,11 @@ namespace Password_Keeper
           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Sign_in_button(object sender, EventArgs e)
         {
 
-            string filePath = (saveFileDialog.FileName);
+            string userName = Environment.UserName;
+            string filePath = (@"C:\Users\" + userName + @"\Desktop\Github\Password Keeper\Profile.txt");
 
 
             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_In_TextBox_Username.Text);

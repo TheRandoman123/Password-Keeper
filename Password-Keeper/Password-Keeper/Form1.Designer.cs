@@ -159,7 +159,7 @@
             this.button1.Tag = "Sign_In_Button";
             this.button1.Text = "Sign In";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Sign_in_button);
             // 
             // button2
             // 
@@ -170,7 +170,7 @@
             this.button2.Tag = "Sign_Up_Button";
             this.button2.Text = "Sign Up";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Sign_up_button);
             // 
             // Form1
             // 
