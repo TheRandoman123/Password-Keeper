@@ -13,7 +13,7 @@ namespace Password_Keeper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new profile_name_sign_in_label());
         }
     }
 }

@@ -7,9 +7,9 @@ using Microsoft.VisualBasic;
 
 namespace Password_Keeper
 {
-    public partial class Form1 : Form
+    public partial class profile_name_sign_in_label : Form
     {
-        public Form1()
+        public profile_name_sign_in_label()
         {
             InitializeComponent();
         }
@@ -18,18 +18,21 @@ namespace Password_Keeper
         {
              string profile_name = (profile_name_textbox_sign_up.Text);
 
-             string userName = Environment.UserName;
+             string user_name = Environment.UserName;
 
-             string filePath = (@"C:\Users\" + userName + @"\Desktop\Github\Password Keeper\" + profile_name + ".txt");
-            
+             string file_path = (@"C:\Users\" + user_name + @"\Desktop\Password Keeper\" + profile_name + ".txt");
+
              string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
 
              string Sign_In_Password_Input = AesCryp.Encrypt(Sign_Up_TextBox_Password.Text);
 
 
-            if (File.Exists(filePath) == true)
+            if (File.Exists(file_path) == true)
             {
-                MessageBox.Show("That Username has all ready been taken");
+                MessageBox.Show("That Username has all ready been taken!");
+               
+
+                profile_name_textbox_sign_up.Clear();
 
                 Sign_Up_TextBox_Username.Clear();
 
@@ -37,10 +40,10 @@ namespace Password_Keeper
             }
             else
             {
-               
-                File.WriteAllText(filePath, Sign_In_Username_Input);
-            
-                File.WriteAllText(filePath, Sign_In_Password_Input);
+                StreamWriter sw = new StreamWriter(file_path, true);
+                sw.Write(Sign_In_Username_Input);
+                sw.Write(Sign_In_Password_Input);
+                sw.Close();
 
                 profile_name_textbox_sign_up.Clear();
 
@@ -56,11 +59,11 @@ namespace Password_Keeper
         {
 
 
-            string profile_name = (profile_name_textbox_sign_up.Text);
+            string profile_name = (profile_name_sign_in_textbox.Text);
+            
+            string user_name = Environment.UserName;
 
-            string userName = Environment.UserName;
-
-            string filePath = (@"C:\Users\" + userName + @"\Desktop\Github\Password Keeper\" + profile_name + ".txt");
+            string file_path = (@"C:\Users\" + user_name + @"\Desktop\Password Keeper\" + profile_name + ".txt");
             
             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_In_TextBox_Username.Text);
             
@@ -68,10 +71,10 @@ namespace Password_Keeper
 
             string textBoxOutput= Sign_In_Password_Input;
 
-            string fileRead = File.ReadAllText(filePath);
+            string file_read = File.ReadAllText(file_path);
 
             
-            if (Sign_In_Password_Input + Sign_In_Username_Input == fileRead)
+            if (Sign_In_Password_Input + Sign_In_Username_Input == file_read)
             {
                 Sign_In_TextBox_Username.Clear();
 
@@ -88,7 +91,6 @@ namespace Password_Keeper
                 }
             }
 
-       
         
     }
     }
