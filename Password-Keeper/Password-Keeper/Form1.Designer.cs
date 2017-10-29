@@ -42,7 +42,6 @@
             this.Sign_Up_TextBox_Password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.profile_name_sign_up_label = new System.Windows.Forms.Label();
             this.profile_name_textbox_sign_up = new System.Windows.Forms.TextBox();
             this.profile_name_sign_in_textbox = new System.Windows.Forms.TextBox();
@@ -160,11 +159,11 @@
             this.button1.TabIndex = 11;
             this.button1.Tag = "Sign_In_Button";
             this.button1.Text = "Sign In";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Sign_in_button);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.AccessibleName = "";
             this.button2.Location = new System.Drawing.Point(511, 225);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -254,7 +253,6 @@
         private System.Windows.Forms.TextBox Sign_Up_TextBox_Password;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Label profile_name_sign_up_label;
         private System.Windows.Forms.TextBox profile_name_textbox_sign_up;
         private System.Windows.Forms.TextBox profile_name_sign_in_textbox;

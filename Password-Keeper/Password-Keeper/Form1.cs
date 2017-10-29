@@ -13,33 +13,54 @@ namespace Password_Keeper
         {
             InitializeComponent();
         }
-        
+
         private void Sign_up_button(object sender, EventArgs e)
         {
-             string profile_name = (profile_name_textbox_sign_up.Text);
 
-             string user_name = Environment.UserName;
+            string profile_name = (profile_name_textbox_sign_up.Text);
 
-             string file_path = (@"C:\Users\" + user_name + @"\Desktop\Password Keeper\" + profile_name + ".txt");
+            string user_name = Environment.UserName;
 
-             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
+            string file_path = (@"C:\Users\" + user_name + @"\Desktop\Password Keeper\" + profile_name + ".txt");
 
-             string Sign_In_Password_Input = AesCryp.Encrypt(Sign_Up_TextBox_Password.Text);
+            string directory_path = (@"C:\Users\" + user_name + @"\Desktop\Password Keeper");
 
+            string Sign_In_Username_Input = AesCryp.Encrypt(Sign_Up_TextBox_Username.Text);
 
-            if (File.Exists(file_path) == true)
+            string Sign_In_Password_Input = AesCryp.Encrypt(Sign_Up_TextBox_Password.Text);
+
+            if (File.Exists(directory_path) == true)
             {
-                MessageBox.Show("That Username has all ready been taken!");
-               
+                if (File.Exists(file_path) == true)
+                {
+                    MessageBox.Show("That Username has all ready been taken!");
+                    
+                    profile_name_textbox_sign_up.Clear();
 
-                profile_name_textbox_sign_up.Clear();
+                    Sign_Up_TextBox_Username.Clear();
 
-                Sign_Up_TextBox_Username.Clear();
+                    Sign_Up_TextBox_Password.Clear();
+                }
+                else
+                {
+                    StreamWriter sw = new StreamWriter(file_path, true);
+                    sw.Write(Sign_In_Username_Input);
+                    sw.Write(Sign_In_Password_Input);
+                    sw.Close();
 
-                Sign_Up_TextBox_Password.Clear();
+                    profile_name_textbox_sign_up.Clear();
+
+                    Sign_Up_TextBox_Username.Clear();
+
+                    Sign_Up_TextBox_Password.Clear();
+
+                    MessageBox.Show("Complete");
+                }
             }
             else
             {
+                Directory.CreateDirectory(directory_path);
+
                 StreamWriter sw = new StreamWriter(file_path, true);
                 sw.Write(Sign_In_Username_Input);
                 sw.Write(Sign_In_Password_Input);
@@ -52,28 +73,29 @@ namespace Password_Keeper
                 Sign_Up_TextBox_Password.Clear();
 
                 MessageBox.Show("Complete");
-          }
+            }
+
+
         }
 
-        private void Sign_in_button(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-
-            string profile_name = (profile_name_sign_in_textbox.Text);
             
+            string profile_name = (profile_name_sign_in_textbox.Text);
+
             string user_name = Environment.UserName;
 
             string file_path = (@"C:\Users\" + user_name + @"\Desktop\Password Keeper\" + profile_name + ".txt");
-            
+
             string Sign_In_Username_Input = AesCryp.Encrypt(Sign_In_TextBox_Username.Text);
-            
+
             string Sign_In_Password_Input = AesCryp.Encrypt(Sign_In_TextBox_Password.Text);
 
-            string textBoxOutput= Sign_In_Password_Input;
+            string textBoxOutput = Sign_In_Password_Input;
 
             string file_read = File.ReadAllText(file_path);
 
-            
+              
             if (Sign_In_Password_Input + Sign_In_Username_Input == file_read)
             {
                 Sign_In_TextBox_Username.Clear();
@@ -82,17 +104,17 @@ namespace Password_Keeper
 
                 var PC = new Password_Center();
                 PC.Show();
-                
-			}
-            
-            else
-                {
-                MessageBox.Show("Wrong password or username, try again.");
-                }
+
             }
 
-        
+            else
+            {
+                MessageBox.Show("Wrong password or username, try again.");
+            }
+        }
+
     }
-    }
+}
+
 
                 
