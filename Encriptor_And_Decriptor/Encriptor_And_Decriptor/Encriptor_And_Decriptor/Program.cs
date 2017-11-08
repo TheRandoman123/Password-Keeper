@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Password_Keeper
+namespace Encriptor_And_Decriptor
 {
     static class Program
     {
@@ -13,7 +16,7 @@ namespace Password_Keeper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Decriptor());
         }
     }
 }

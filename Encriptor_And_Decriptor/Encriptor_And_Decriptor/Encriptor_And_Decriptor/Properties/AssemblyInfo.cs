@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Password-Keeper")]
+[assembly: AssemblyTitle("Encriptor_And_Decriptor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Password-Keeper")]
+[assembly: AssemblyProduct("Encriptor_And_Decriptor")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d37574c2-d7a5-4974-bfa0-c964dd5b2177")]
+[assembly: Guid("52a61763-cd7e-4cc1-92f4-4c7e946fad39")]
 
 // Version information for an assembly consists of the following four values:
 //

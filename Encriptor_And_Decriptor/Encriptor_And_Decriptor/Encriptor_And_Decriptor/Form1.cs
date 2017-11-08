@@ -1,10 +1,68 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Security;
+using System.Windows.Forms;
+using System.IO;
 using System.Security.Cryptography;
+using Encript_And_Decript;
+
+namespace Encriptor_And_Decriptor
+{
+    public partial class Decriptor : Form
+    {
+        public Decriptor()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            open_file.ShowDialog();
+
+            string file = open_file.FileName;
+
+            string read_file = File.ReadAllText(file);
+
+            if (decrypt_checkbox.Checked = true && encrypt_checkbox.Checked == true)
+            {
+                MessageBox.Show("Sorry you cant Encrypt and Decrypt both at the same time, please only select on operation");
+            }
+
+            else
+            {
+                if (encrypt_checkbox.Checked == true)
+                {
+
+                }
+            }
+                
+
+
+        }
+
+        private void clear_textboxes_Click(object sender, EventArgs e)
+        {
+            decripted_textbox_output.Clear();
+
+            file_textbox.Clear();
+
+        }
+
+        private void decript_and_encrypt_button_Click(object sender, EventArgs e)
+        {
+            string text = file_textbox.Text;
+
+            string decripted_text = AesCryp.Decrypt(text);
+
+            decripted_textbox_output.Text = decripted_text;
+        }
+    }
+}
+
 
 namespace Encript_And_Decript
 {
@@ -52,3 +110,5 @@ namespace Encript_And_Decript
         }
     }
 }
+
+
