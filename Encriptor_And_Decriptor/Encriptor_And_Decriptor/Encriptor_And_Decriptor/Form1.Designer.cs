@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.decripted_textbox_output = new System.Windows.Forms.TextBox();
+            this.textbox_output = new System.Windows.Forms.TextBox();
             this.open_file = new System.Windows.Forms.OpenFileDialog();
             this.decript_and_encrypt_button = new System.Windows.Forms.Button();
             this.clear_textboxes = new System.Windows.Forms.Button();
@@ -86,13 +86,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Output";
             // 
-            // decripted_textbox_output
+            // textbox_output
             // 
-            this.decripted_textbox_output.Location = new System.Drawing.Point(11, 165);
-            this.decripted_textbox_output.Multiline = true;
-            this.decripted_textbox_output.Name = "decripted_textbox_output";
-            this.decripted_textbox_output.Size = new System.Drawing.Size(302, 86);
-            this.decripted_textbox_output.TabIndex = 6;
+            this.textbox_output.Location = new System.Drawing.Point(11, 165);
+            this.textbox_output.Multiline = true;
+            this.textbox_output.Name = "textbox_output";
+            this.textbox_output.Size = new System.Drawing.Size(302, 86);
+            this.textbox_output.TabIndex = 6;
             // 
             // open_file
             // 
@@ -130,6 +130,7 @@
             // 
             // decrypt_checkbox
             // 
+            this.decrypt_checkbox.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
             this.decrypt_checkbox.AutoSize = true;
             this.decrypt_checkbox.Location = new System.Drawing.Point(211, 31);
             this.decrypt_checkbox.Name = "decrypt_checkbox";
@@ -147,7 +148,7 @@
             this.Controls.Add(this.encrypt_checkbox);
             this.Controls.Add(this.clear_textboxes);
             this.Controls.Add(this.decript_and_encrypt_button);
-            this.Controls.Add(this.decripted_textbox_output);
+            this.Controls.Add(this.textbox_output);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -170,7 +171,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox decripted_textbox_output;
+        private System.Windows.Forms.TextBox textbox_output;
         private System.Windows.Forms.OpenFileDialog open_file;
         private System.Windows.Forms.Button decript_and_encrypt_button;
         private System.Windows.Forms.Button clear_textboxes;
